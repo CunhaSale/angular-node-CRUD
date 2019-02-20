@@ -1,0 +1,29 @@
+{
+  "name": "vaga-fullstack",
+  "version": "1.0.0",
+  "description": "Olá Dev!  Tudo bem?",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CunhaSale/vaga-fullstack.git"
+  },
+  "keywords": [],
+  "author": "Gabriel Cunha <gabriel_mcunha@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CunhaSale/vaga-fullstack/issues"
+  },
+  "homepage": "https://github.com/CunhaSale/vaga-fullstack#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongojs": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
