@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { AppRoutingModule } from './app.routing.module';
 import { PokemonInsertComponent } from './components/pokemon-insert/pokemon-insert.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
-    PokemonInsertComponent
+    PokemonInsertComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
