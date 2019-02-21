@@ -5,10 +5,10 @@ const PokemonSchema = new Schema({
         name: { type: String, required: true },
         order: { type: Number },
         types: { type: Array },
-        moves: { type: Array },
         abilities: { type: Array }
     },
-    {collection: 'pokedex'
+    {collection: 'pokedex',
+    versionKey: false
 });
 
 module.exports = mongoose.model('pokedex', PokemonSchema);

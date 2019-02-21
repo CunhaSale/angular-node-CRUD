@@ -33,7 +33,6 @@ pokemonCtrl.put = async (req, res) => {
         name: req.body.name,
         order: req.body.order,
         types: req.body.types,
-        moves: req.body.moves,
         abilities: req.body.abilities
     };
     await Pokedex.findByIdAndUpdate(id, {$set: pokemon}, {new: true});
