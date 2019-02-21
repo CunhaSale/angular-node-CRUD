@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 link-insert">
+        <i class="fas fa-plus"></i>&nbsp;<a href="#">Inserir Pokémon</a>
+    </div>
+  </div>
+  <div class="row search">
+    <div class="input-group mb-3 col-sm-8 col-md-5">
+      <input type="text" class="form-control" aria-label="search" placeholder="Buscar pokémon">
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fas fa-search"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="row list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of pokemons">
+          <th scope="row">{{ pokemon.order }}</th>
+          <td>{{ pokemon.name }}</td>
+          <td><a href="#">ver mais</a></td>
+          <td><span class="btn-remove"><i class="far fa-trash-alt"></i></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

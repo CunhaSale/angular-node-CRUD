@@ -1,0 +1,25 @@
+.row{
+    padding: 0 4%;
+}
+.search{
+    margin-top: 20px;
+}
+.input-group{
+    margin: 0 auto;
+}
+.link-insert{
+    text-align: right;
+}
+.link-insert i{
+    font-size: .9em;
+    color: #007bff
+}
+.fa-trash-alt{
+    color: #f53d3d;
+}
+.fa-trash-alt:hover{
+    color: rgb(189, 60, 48);
+}
+.btn-remove{
+    cursor: pointer;
+}
