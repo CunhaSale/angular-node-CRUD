@@ -32,8 +32,8 @@
         <tr *ngFor="let pokemon of pokemons">
           <th scope="row">{{ pokemon.order }}</th>
           <td>{{ pokemon.name }}</td>
-          <td><a routerLink="/pokemon-detail">ver mais</a></td>
-          <td><span class="btn-remove"><i class="far fa-trash-alt"></i></span></td>
+          <td><a [routerLink]="['/pokemon-detail', pokemon._id]">ver mais</a></td>
+          <td><span class="btn-remove" (click)="remove(pokemon._id)"><i class="far fa-trash-alt"></i></span></td>
         </tr>
       </tbody>
     </table>
