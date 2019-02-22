@@ -26,65 +26,38 @@
 .hability p{
     font-size: 1.3em;
 }
-.color-fire{
-    background: red;
-}
-.color-dark{
-    background: #333;
-}
+/* en */
+.color-fire{background: red;}
+.color-dark{background: #333;}
+.color-electr{background: yellow;}
+.color-fairy{background: rgba(255, 85, 255, 0.568);}
+.color-fight{background: rgba(88, 35, 46, 0.774);}
+.color-flying{background: rgb(179, 179, 216);}
+.color-ghost{background: rgb(80, 80, 110);}
+.color-grass{background: rgb(9, 110, 34);}
+.color-ground{background: rgba(104, 73, 79, 0.774);}
+.color-ice{background: rgb(207, 207, 226);}
+.color-normal{background: rgb(147, 147, 151);}
+.color-psychc{background: rgb(248, 218, 241);}
+.color-rock{background: rgb(82, 82, 94);}
+.color-steel{background: rgb(198, 198, 201);}
+.color-water{background: blue;}
+.color-poison{background: rgb(178, 135, 206);}
 
-.color-electr{
-    background: yellow;
-}
-
-.color-fairy{
-    background: rgba(255, 85, 255, 0.568);
-}
-
-.color-fight{
-    background: rgba(88, 35, 46, 0.774);
-}
-
-.color-flying{
-    background: rgb(179, 179, 216);
-}
-
-.color-ghost{
-    background: rgb(80, 80, 110);
-}
-
-.color-grass{
-    background: rgb(9, 110, 34);
-}
-
-.color-ground{
-    background: rgba(104, 73, 79, 0.774);
-}
-
-.color-ice{
-    background: rgb(207, 207, 226);
-}
-
-.color-normal{
-    background: rgb(147, 147, 151);
-}
-
-.color-psychc{
-    background: rgb(248, 218, 241);
-}
-
-.color-rock{
-    background: rgb(82, 82, 94);
-}
-
-.color-steel{
-    background: rgb(198, 198, 201);
-}
-
-.color-water{
-    background: blue;
-}
-
-.color-poison{
-    background: rgb(178, 135, 206);
-}
+/* pt */
+.color-fogo{background: red;}
+.color-dark{background: #333;}
+.color-elétrico{background: yellow;}
+.color-fada{background: rgba(255, 85, 255, 0.568);}
+.color-lutador{background: rgba(88, 35, 46, 0.774);}
+.color-voador{background: rgb(179, 179, 216);}
+.color-fantasma{background: rgb(80, 80, 110);}
+.color-grama{background: rgb(9, 110, 34);}
+.color-terra{background: rgba(104, 73, 79, 0.774);}
+.color-gelo{background: rgb(207, 207, 226);}
+.color-normal{background: rgb(147, 147, 151);}
+.color-psycho{background: rgb(248, 218, 241);}
+.color-pedra{background: rgb(82, 82, 94);}
+.color-metal{background: rgb(198, 198, 201);}
+.color-água{background: blue;}
+.color-venenoso{background: rgb(178, 135, 206);}

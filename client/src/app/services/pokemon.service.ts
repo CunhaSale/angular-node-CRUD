@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
+import { IPokemon } from '../models/pokemon';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -38,7 +39,6 @@ export class PokemonService {
 
   searchPokemon(term){
     console.log(term)
-    console.log('term')
     if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
