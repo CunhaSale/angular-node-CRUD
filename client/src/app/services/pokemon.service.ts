@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
+import { of } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -33,5 +34,15 @@ export class PokemonService {
 
   updatePokemon(id, body){
     return this.http.put(`${this.urlEncoded}/pokemons/${id}`, body, httpOptions)
+  }
+
+  searchPokemon(term){
+    console.log(term)
+    console.log('term')
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get(`${this.urlEncoded}/pokemons`, httpOptions)
   }
 }
