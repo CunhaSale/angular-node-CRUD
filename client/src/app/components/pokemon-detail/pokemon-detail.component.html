@@ -21,8 +21,8 @@
           <h3>Habilidades: </h3>
           <p *ngFor="let ability of pokemon.abilities">{{ ability }}</p>
         </div>
-        </div>
-        <button class="btn btn-primary btn-block">Editar</button>
       </div>
+      <button class="btn btn-primary btn-block" routerLink="/pokemon-insert" [queryParams]="{id: pokemonId}" fragment="edit" >Editar</button>
+    </div>
   </div>
 </div>

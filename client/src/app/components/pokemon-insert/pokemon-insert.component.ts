@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, AbstractControl, Validators } from '@angular/forms';
 import { PokemonService } from 'src/app/services/pokemon.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-insert',
@@ -18,15 +18,18 @@ export class PokemonInsertComponent implements OnInit {
   ability3: AbstractControl;
 
   pokemon;
+  pokemonId;
+  edit = false;
 
   constructor(private formBuilder: FormBuilder,
               private pokemonService: PokemonService,
-              private router: Router) {
+              private router: Router,
+              private route: ActivatedRoute) {
     this.new_pokemon = this.formBuilder.group({
       name: ['', Validators.required],
-      type1: [''],
+      type1: ['', Validators.required],
       type2: [''],
-      ability1: [''],
+      ability1: ['', Validators.required],
       ability2: [''],
       ability3: [''],
     });
@@ -40,6 +43,20 @@ export class PokemonInsertComponent implements OnInit {
    }
 
   ngOnInit() {
+    if(this.route.snapshot.fragment){
+      this.edit = true;
+      this.pokemonService.getOneById(this.route.snapshot.queryParams.id)
+      .subscribe(res => {
+        this.pokemon = res;
+        this.pokemonId = this.pokemon._id;
+        this.name.setValue(this.pokemon.name);
+        this.type1.setValue(this.pokemon.types[0]);
+        if(this.pokemon.types.length > 0){this.type2.setValue(this.pokemon.types[1])}
+        this.ability1.setValue(this.pokemon.abilities[0]);
+        if(this.pokemon.abilities.length > 0){this.ability2.setValue(this.pokemon.abilities[1])}
+        if(this.pokemon.abilities.length > 1){this.ability3.setValue(this.pokemon.abilities[2])}
+      });
+    }
   }
 
   save(){
@@ -59,10 +76,18 @@ export class PokemonInsertComponent implements OnInit {
       abilities: abilities,
     }
 
-    this.pokemonService.createNewPokemon(this.pokemon)
-    .subscribe(() => {
-      this.router.navigateByUrl('/');
-    });
+    if(this.edit == true){
+      this.pokemonService.updatePokemon(this.pokemonId, this.pokemon)
+      .subscribe(res => {
+        this.router.navigateByUrl('/');
+      });
+    }else{
+      this.pokemonService.createNewPokemon(this.pokemon)
+      .subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
+    }
+
   }
 
 }

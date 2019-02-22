@@ -30,4 +30,8 @@ export class PokemonService {
   deletePokemon(id){
     return this.http.delete(`${this.urlEncoded}/pokemons/${id}`, httpOptions)
   }
+
+  updatePokemon(id, body){
+    return this.http.put(`${this.urlEncoded}/pokemons/${id}`, body, httpOptions)
+  }
 }

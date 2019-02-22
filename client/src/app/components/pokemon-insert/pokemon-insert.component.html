@@ -1,8 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col title">
-      <h2>Adicionar Pokémon</h2>
-    </div>
+    <div *ngIf="edit; then editPokemon else newPokemon"></div>
+    <ng-template #editPokemon>
+      <div class="col title">
+        <h2>Editar Pokémon</h2>
+      </div>
+    </ng-template>
+    <ng-template #newPokemon>
+      <div class="col title">
+        <h2>Adicionar Pokémon</h2>
+      </div>
+    </ng-template>
   </div>
   <div class="row">
     <div class="col-md-8 form-insert">
@@ -12,7 +20,8 @@
           <div class="col">
             <div class="form-group">
               <label for="name">Nome do Pokémon</label>
-              <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="name" placeholder="Name">
+              <input type="text" formControlName="name" [ngClass]="{'red-border-class': name.touched && name.errors}" class="form-control" id="name" aria-describedby="name" placeholder="Name">
+              <div *ngIf="name.touched && name.errors.required" class="help-block">*O campo nome é obrigatório</div>
             </div>
           </div>
         </div>
@@ -20,7 +29,8 @@
           <div class="col" style="padding-right: 2px;">
             <div class="form-group">
               <label for="type">Tipo 1</label>
-              <input type="text" formControlName="type1" class="form-control" id="type" aria-describedby="type" placeholder="Tipo">
+              <input type="text" formControlName="type1" [ngClass]="{'red-border-class': type1.touched && type1.errors}" class="form-control" id="type" aria-describedby="type" placeholder="Tipo">
+              <div *ngIf="type1.touched && type1.errors.required" class="help-block">*O campo Tipo 1 é obrigatório</div>
             </div>
           </div>
           <div class="col" style="padding-left: 2px;">
@@ -34,7 +44,8 @@
           <div class="col">
             <div class="form-group">
               <label for="ability">Abilidade 1</label>
-              <input type="text" formControlName="ability1" class="form-control" id="ability" aria-describedby="ability" placeholder="habilidade">
+              <input type="text" formControlName="ability1" [ngClass]="{'red-border-class': ability1.touched && ability1.errors}" class="form-control" id="ability" aria-describedby="ability" placeholder="habilidade">
+              <div *ngIf="ability1.touched && ability1.errors.required" class="help-block">*O campo Abilidade 1 é obrigatório</div>              
             </div>
           </div>
         </div>
@@ -54,7 +65,13 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+        <div *ngIf="edit; then btnSaveChanges else btnSave"></div>
+        <ng-template #btnSaveChanges>
+          <button [disabled]="!new_pokemon.valid" type="submit" class="btn btn-primary btn-block">Salvar Alterações</button>
+        </ng-template>
+        <ng-template #btnSave>
+          <button [disabled]="!new_pokemon.valid" type="submit" class="btn btn-primary btn-block">Adicionar</button>
+        </ng-template>
       </form>
     </div>
   </div>
