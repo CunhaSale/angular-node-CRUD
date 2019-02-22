@@ -14,6 +14,8 @@ app.use(express.json());
 //routes
 app.use('/api', require('./routes/pokemon.routes'));
 
+app.use(express.static(path.join(__dirname, '../dist/client')));
+
 app.listen(app.get('port'), () => {
     console.log('Server on port 3456');
 })
